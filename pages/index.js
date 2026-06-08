@@ -21,7 +21,7 @@ export default function Home() {
       <div className="min-h-screen bg-gradient-to-br from-purple-50 via-white to-indigo-50">
         <div className="max-w-6xl mx-auto px-6 py-10">
 
-          {/* Fixed Navbar with perfect alignment */}
+          {/* Navbar with twin premium buttons */}
           <motion.nav
             initial={{ y: -30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
@@ -31,11 +31,11 @@ export default function Home() {
               Sarvoch Coaching
             </h1>
 
-            {/* items-center aur gap-6 se dono links balanced dikhenge */}
-            <div className="flex items-center gap-6">
+            {/* Dono buttons me same styling apply kar di hai */}
+            <div className="flex items-center gap-4">
               <Link 
                 href="/about" 
-                className="font-semibold text-gray-600 hover:text-purple-700 transition-colors duration-200"
+                className="bg-purple-600 hover:bg-purple-700 text-white font-semibold px-6 py-2.5 rounded-full shadow-md hover:shadow-lg transition-all duration-200"
               >
                 About
               </Link>
@@ -108,5 +108,5 @@ export default function Home() {
       </div>
     </>
   );
-                  }
-              
+}
+
