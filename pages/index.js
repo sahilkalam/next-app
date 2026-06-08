@@ -21,29 +21,35 @@ export default function Home() {
       <div className="min-h-screen bg-gradient-to-br from-purple-50 via-white to-indigo-50">
         <div className="max-w-6xl mx-auto px-6 py-10">
 
+          {/* Fixed Navbar with perfect alignment */}
           <motion.nav
             initial={{ y: -30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             className="flex justify-between items-center"
           >
-            <h1 className="text-3xl font-black text-purple-700">
+            <h1 className="text-3xl font-black text-purple-700 tracking-tight">
               Sarvoch Coaching
             </h1>
 
-            <div className="flex gap-4">
-              <Link href="/about" className="font-semibold">
+            {/* items-center aur gap-6 se dono links balanced dikhenge */}
+            <div className="flex items-center gap-6">
+              <Link 
+                href="/about" 
+                className="font-semibold text-gray-600 hover:text-purple-700 transition-colors duration-200"
+              >
                 About
               </Link>
 
               <Link
                 href="/contact"
-                className="bg-purple-600 text-white px-5 py-2 rounded-full"
+                className="bg-purple-600 hover:bg-purple-700 text-white font-semibold px-6 py-2.5 rounded-full shadow-md hover:shadow-lg transition-all duration-200"
               >
                 Contact
               </Link>
             </div>
           </motion.nav>
 
+          {/* Hero Section */}
           <motion.section
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -59,6 +65,7 @@ export default function Home() {
             </p>
           </motion.section>
 
+          {/* Features Grid */}
           <motion.div
             initial="hidden"
             animate="show"
@@ -89,7 +96,7 @@ export default function Home() {
                   scale: 1.05,
                   y: -8,
                 }}
-                className="backdrop-blur-lg bg-white/70 border border-white rounded-3xl p-8 shadow-lg"
+                className="backdrop-blur-lg bg-white/70 border border-white rounded-3xl p-8 shadow-lg cursor-pointer"
               >
                 <h3 className="font-bold text-xl text-purple-700">
                   {item}
@@ -101,4 +108,5 @@ export default function Home() {
       </div>
     </>
   );
-}
+                  }
+              
