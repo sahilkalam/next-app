@@ -15,10 +15,7 @@ export default function StudentForm() {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleSubmit = async (e) => {
@@ -37,20 +34,11 @@ export default function StudentForm() {
       await fetch(googleSheetUrl, {
         method: "POST",
         mode: "no-cors", 
-        headers: {
-          "Content-Type": "application/x-www-form-urlencoded",
-        },
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: urlEncodedData,
       });
-
       alert("Data successfully save ho gaya!");
-      
-      setFormData({
-        name: "",
-        number: "",
-        email: "",
-        studentClass: "",
-      });
+      setFormData({ name: "", number: "", email: "", studentClass: "" });
     } catch (error) {
       console.error("Submission Error:", error);
       alert("Kuch gadbad hui, data save nahi ho paya.");
@@ -63,110 +51,111 @@ export default function StudentForm() {
     <>
       <Head>
         <title>Student Registration - Sarvoch Coaching</title>
-        <meta name="description" content="Join Sarvoch Coaching Centre" />
       </Head>
       
-      {/* Background Matching Home Page Theme */}
-      <div className="min-h-screen bg-gradient-to-br from-purple-50 via-white to-indigo-50 flex flex-col justify-between p-6">
+      {/* Container spacing fixed for mobile: p-4 sm:p-6 */}
+      <div className="min-h-screen bg-gradient-to-br from-purple-50 via-white to-indigo-50 flex flex-col justify-between p-4 sm:p-6">
         
-        {/* Simple Top Navigation */}
-        <div className="max-w-6xl w-full mx-auto flex justify-between items-center mb-6">
+        {/* Responsive Header for Form */}
+        <div className="max-w-6xl w-full mx-auto flex flex-col sm:flex-row justify-between items-center gap-3 mb-6">
           <Link href="/">
-            <span className="text-2xl font-black text-purple-700 tracking-tight cursor-pointer">
+            <span className="text-xl sm:text-2xl font-black text-purple-700 tracking-tight cursor-pointer">
               Sarvoch Coaching
             </span>
           </Link>
           <Link href="/">
-            <span className="bg-purple-100 hover:bg-purple-200 text-purple-700 font-semibold px-5 py-2 rounded-full transition-all text-sm cursor-pointer">
+            <span className="bg-purple-100 hover:bg-purple-200 text-purple-700 font-semibold px-4 py-1.5 sm:px-5 sm:py-2 rounded-full transition-all text-xs sm:text-sm cursor-pointer">
               ← Back to Home
             </span>
           </Link>
         </div>
 
-        {/* Animated Premium Form Card */}
-        <div className="flex-grow flex items-center justify-center">
+        {/* Form Card Centerization and Padding Fix */}
+        <div className="flex-grow flex items-center justify-center w-full my-4">
           <motion.div  
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, ease: "easeOut" }}
-            className="backdrop-blur-lg bg-white/70 border border-white p-8 rounded-3xl shadow-xl w-full max-w-md"
+            transition={{ duration: 0.4 }}
+            className="backdrop-blur-lg bg-white/70 border border-white p-5 sm:p-8 rounded-2xl sm:rounded-3xl shadow-xl w-full max-w-md mx-auto"
           >
-            <h2 className="text-3xl font-black mb-2 text-gray-800 text-center">
+            <h2 className="text-2xl sm:text-3xl font-black mb-1 text-gray-800 text-center">
               Registration Form
             </h2>
-            <p className="text-gray-500 text-sm text-center mb-6">
+            <p className="text-gray-500 text-xs sm:text-sm text-center mb-6">
               Apni details fill karein aur apni seat confirm karein.
             </p>
             
-            <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-              {/* Name Input */}
+            <form onSubmit={handleSubmit} className="flex flex-col gap-3 sm:gap-4">
+              
               <div className="flex flex-col gap-1">
-                <label className="text-xs font-bold text-purple-700 uppercase tracking-wider pl-1">Full Name</label>
+                <label className="text-[10px] sm:text-xs font-bold text-purple-700 uppercase tracking-wider pl-1">Full Name</label>
                 <input
                   type="text"
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
                   placeholder="Enter Name"
-                  className="bg-white p-3 rounded-2xl shadow-sm border border-purple-100 focus:outline-none focus:ring-2 focus:ring-purple-500 transition-all text-gray-700"
+                  className="bg-white p-2.5 sm:p-3 rounded-xl sm:rounded-2xl shadow-sm border border-purple-100 focus:outline-none focus:ring-2 focus:ring-purple-500 text-sm sm:text-base text-gray-700"
                   required
                 />
               </div>
               
-              {/* Number Input */}
               <div className="flex flex-col gap-1">
-                <label className="text-xs font-bold text-purple-700 uppercase tracking-wider pl-1">Contact Number</label>
+                <label className="text-[10px] sm:text-xs font-bold text-purple-700 uppercase tracking-wider pl-1">Contact Number</label>
                 <input
                   type="tel"
                   name="number"
                   value={formData.number}
                   onChange={handleChange}
                   placeholder="Enter Number"
-                  className="bg-white p-3 rounded-2xl shadow-sm border border-purple-100 focus:outline-none focus:ring-2 focus:ring-purple-500 transition-all text-gray-700"
+                  className="bg-white p-2.5 sm:p-3 rounded-xl sm:rounded-2xl shadow-sm border border-purple-100 focus:outline-none focus:ring-2 focus:ring-purple-500 text-sm sm:text-base text-gray-700"
                   required
                 />
               </div>
               
-              {/* Email Input */}
               <div className="flex flex-col gap-1">
-                <label className="text-xs font-bold text-purple-700 uppercase tracking-wider pl-1">Email Address</label>
+                <label className="text-[10px] sm:text-xs font-bold text-purple-700 uppercase tracking-wider pl-1">Email Address</label>
                 <input
                   type="email"
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
                   placeholder="Enter Email"
-                  className="bg-white p-3 rounded-2xl shadow-sm border border-purple-100 focus:outline-none focus:ring-2 focus:ring-purple-500 transition-all text-gray-700"
+                  className="bg-white p-2.5 sm:p-3 rounded-xl sm:rounded-2xl shadow-sm border border-purple-100 focus:outline-none focus:ring-2 focus:ring-purple-500 text-sm sm:text-base text-gray-700"
                   required
                 />
               </div>
               
-              {/* Class Dropdown Selection */}
               <div className="flex flex-col gap-1">
-                <label className="text-xs font-bold text-purple-700 uppercase tracking-wider pl-1">Select Class</label>
-                <select
-                  name="studentClass"
-                  value={formData.studentClass}
-                  onChange={handleChange}
-                  className="bg-white p-3 rounded-2xl shadow-sm border border-purple-100 focus:outline-none focus:ring-2 focus:ring-purple-500 transition-all text-gray-700 appearance-none cursor-pointer"
-                  required
-                >
-                  <option value="" disabled hidden>Choose your class</option>
-                  <option value="8th">8th Class</option>
-                  <option value="9th">9th Class</option>
-                  <option value="10th">10th Class</option>
-                  <option value="11th">11th Class</option>
-                  <option value="12th">12th Class</option>
-                </select>
+                <label className="text-[10px] sm:text-xs font-bold text-purple-700 uppercase tracking-wider pl-1">Select Class</label>
+                <div className="relative">
+                  <select
+                    name="studentClass"
+                    value={formData.studentClass}
+                    onChange={handleChange}
+                    className="w-full bg-white p-2.5 sm:p-3 rounded-xl sm:rounded-2xl shadow-sm border border-purple-100 focus:outline-none focus:ring-2 focus:ring-purple-500 text-sm sm:text-base text-gray-700 appearance-none cursor-pointer"
+                    required
+                  >
+                    <option value="" disabled hidden>Choose your class</option>
+                    <option value="8th">8th Class</option>
+                    <option value="9th">9th Class</option>
+                    <option value="10th">10th Class</option>
+                    <option value="11th">11th Class</option>
+                    <option value="12th">12th Class</option>
+                  </select>
+                  {/* Custom Dropdown Arrow for aesthetics */}
+                  <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-purple-500">
+                    ▼
+                  </div>
+                </div>
               </div>
               
-              {/* Premium Submit Button */}
               <motion.button 
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
+                whileHover={{ scale: 1.01 }}
+                whileTap={{ scale: 0.99 }}
                 type="submit" 
                 disabled={loading}
-                className="bg-purple-600 hover:bg-purple-700 text-white font-semibold p-3.5 mt-4 rounded-full shadow-md hover:shadow-lg transition-all duration-200 disabled:bg-gray-400 text-center text-lg"
+                className="bg-purple-600 hover:bg-purple-700 text-white font-semibold p-3 mt-2 rounded-full shadow-md text-base sm:text-lg disabled:bg-gray-400 text-center"
               >
                 {loading ? "Saving..." : "Submit"}
               </motion.button>
@@ -174,11 +163,11 @@ export default function StudentForm() {
           </motion.div>
         </div>
         
-        {/* Footer spacing component */}
-        <div className="text-center text-xs text-gray-400 mt-6">
+        <div className="text-center text-[10px] sm:text-xs text-gray-400 mt-4">
           © {new Date().getFullYear()} Sarvoch Coaching Centre. All rights reserved.
         </div>
       </div>
     </>
   );
-}
+        }
+        
