@@ -46,6 +46,9 @@ export default function Home() {
               >
                 Contact
               </Link>
+              <Link href="/form"
+              className="bg-purple-600 hover:bg-purple-700 text-white font-semibold px-6 py-2.5 rounded-full shadow-md hover:shadow-lg transition-all duration-200">Fill form</Link>
+
             </div>
           </motion.nav>
 
