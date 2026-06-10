@@ -51,6 +51,10 @@ export default function StudentForm() {
     <>
       <Head>
         <title>Student Registration - Sarvoch Coaching</title>
+    <meta
+    name="description"
+    content="Fill out the admission form to apply for courses at Sarvoch Coaching Centre."
+  />
       </Head>
       
       {/* Container spacing fixed for mobile: p-4 sm:p-6 */}
