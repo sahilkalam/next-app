@@ -16,6 +16,7 @@ export default function Home() {
     <>
       <Head>
         <title>Sarvoch Coaching Centre</title>
+    <meta name="google-site-verification" content="b3_vUZ44IyMvtea-jViWJMcSVi4senjz_Q76qfPbySM" />
       </Head>
 
       <div className="min-h-screen bg-gradient-to-br from-purple-50 via-white to-indigo-50">
