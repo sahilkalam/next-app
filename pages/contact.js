@@ -4,18 +4,29 @@ import { motion } from "framer-motion";
 
 export default function Contact() {
   const Adminemail = "sahilkalam000@gmail.com";
-  const phoneNumber = "917992355621"; 
-  const message = encodeURIComponent("Hello Sarvoch Coaching, I want to inquire about admission.");
-  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
+  const botUsername = "Test_sahil93_bot"; 
+  
+  // Basic English message as requested
+  const message = encodeURIComponent("Hey sir, I want admission in Sarvoch Coaching Centre");
+  
+  // Telegram Bot link (Note: Telegram bots primarily open direct chat)
+  const telegramUrl = `https://t.me/${botUsername}`;
 
   return (
     <>
       <Head>
         <title>Sarvoch Coaching Centre | Contact Us</title>
-    <meta
-    name="description"
-    content="Contact Sarvoch Coaching Centre for admissions, course information and student support."
-  />
+        <meta
+          name="description"
+          content="Contact Sarvoch Coaching Centre for admissions, course information, and student support. Start your learning journey with Abdul sir."
+        />
+        {/* Extra SEO Meta Tags Added Below */}
+        <meta name="keywords" content="Sarvoch Coaching Centre, Abdul sir, Admission 2026, Coaching Classes, Student Support, Contact Sarvoch" />
+        <meta name="robots" content="index, follow" />
+        <meta property="og:title" content="Sarvoch Coaching Centre | Contact Us" />
+        <meta property="og:description" content="Get in touch with Sarvoch Coaching Centre for admissions and career guidance." />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
       </Head>
 
       <div className="min-h-screen bg-gray-50 text-gray-800 p-4 sm:p-8 flex flex-col justify-between">
@@ -43,7 +54,7 @@ export default function Contact() {
               transition={{ delay: 0.2, type: "spring", stiffness: 120 }}
               className="mx-auto w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center text-2xl mb-6 shadow-inner"
             >
-              📞
+              💬
             </motion.div>
 
             <h1 className="text-2xl font-black text-gray-900 tracking-tight mb-2">
@@ -58,8 +69,6 @@ export default function Contact() {
             {/* Separated Contact Details for Premium UX */}
             <div className="space-y-6 mb-8">
               
-              {/* Phone Section */}
-
               {/* Email Section */}
               <div>
                 <p className="text-xs text-gray-400 font-medium uppercase tracking-wider mb-1">
@@ -75,19 +84,20 @@ export default function Contact() {
 
             </div>
 
-            {/* Clickable Motion WhatsApp Button */}
+            {/* Clickable Motion Telegram Button */}
             <motion.a 
-              href={whatsappUrl}
+              href={telegramUrl}
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.97 }}
-              className="w-full bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-4 px-6 rounded-2xl shadow-lg shadow-emerald-200 transition-colors duration-300 flex items-center justify-center space-x-3 text-lg"
+              className="w-full bg-sky-500 hover:bg-sky-600 text-white font-bold py-4 px-6 rounded-2xl shadow-lg shadow-sky-200 transition-colors duration-300 flex items-center justify-center space-x-3 text-lg"
             >
+              {/* Telegram SVG Icon */}
               <svg className="w-6 h-6 fill-current" viewBox="0 0 24 24">
-                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397 0 12.008 0c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 12.004-11.953 12.004-1.997-.001-3.956-.5-5.691-1.448L0 24zm6.59-4.817c1.615.959 3.198 1.463 4.821 1.465 5.305 0 9.623-4.314 9.626-9.619.002-2.569-1.002-4.985-2.825-6.808-1.824-1.824-4.24-2.826-6.81-2.827-5.31 0-9.628 4.316-9.63 9.62-.001 1.74.47 3.431 1.365 4.935l-.4 1.462 1.453-.381z"/>
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.16 1.12-.88 5.36-1.24 7.32-.15.83-.46 1.11-.76 1.14-.64.06-1.13-.42-1.75-.83-.97-.63-1.52-1.02-2.46-1.64-1.08-.71-.38-1.1.24-1.74.16-.17 2.97-2.72 3.02-2.94.01-.03.01-.14-.05-.2-.06-.06-.16-.04-.23-.02-.1.02-1.67 1.06-4.71 3.11-.45.31-.85.46-1.21.45-.4-.01-1.16-.23-1.73-.41-.7-.23-1.25-.35-1.2-.74.03-.2.3-.41.83-.62 3.23-1.41 5.39-2.34 6.47-2.79 3.07-1.28 3.71-1.5 4.13-1.51.09 0 .3.02.43.13.11.09.14.21.15.31.02.19 0 .4-.02.59z"/>
               </svg>
-              <span>Chat on WhatsApp</span>
+              <span>Chat on Telegram</span>
             </motion.a>
 
           </motion.main>
