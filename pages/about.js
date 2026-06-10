@@ -7,6 +7,10 @@ export default function About() {
     <>
       <Head>
         <title>About | Sarvoch Coaching</title>
+    <meta
+    name="description"
+    content="Learn about Sarvoch Coaching Centre, our mission, teachers and commitment to student success."
+  />
       </Head>
 
       <div className="min-h-screen bg-gradient-to-br from-purple-50 to-indigo-50">
