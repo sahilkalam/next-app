@@ -16,6 +16,33 @@ export default function Home() {
     <>
       <Head>
         <title>Sarvoch Coaching Centre</title>
+    <meta
+    name="description"
+    content="Sarvoch Coaching Centre provides quality coaching for students with experienced teachers, structured courses, regular tests, and academic guidance."
+  />
+
+  <meta
+    name="keywords"
+    content="Sarvoch Coaching Centre, Coaching Centre, Tuition Classes, Bihar Coaching, School Coaching, Competitive Exam Preparation, Education"
+  />
+
+  <meta name="author" content="Sarvoch Coaching Centre" />
+
+  <meta property="og:title" content="Sarvoch Coaching Centre" />
+
+  <meta
+    property="og:description"
+    content="Quality education and academic excellence for students."
+  />
+
+  <meta
+    property="og:url"
+    content="https://sarvochcoachingcentre.vercel.app"
+  />
+
+  <meta property="og:type" content="website" />
+
+  <meta name="robots" content="index, follow" />
     <meta name="google-site-verification" content="b3_vUZ44IyMvtea-jViWJMcSVi4senjz_Q76qfPbySM" />
       </Head>
 
