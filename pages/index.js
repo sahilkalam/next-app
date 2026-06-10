@@ -43,6 +43,10 @@ export default function Home() {
   <meta property="og:type" content="website" />
 
   <meta name="robots" content="index, follow" />
+      <meta
+    name="description"
+    content="Sarvoch Coaching Centre provides quality coaching, experienced teachers, regular tests and academic guidance."
+  />
     <meta name="google-site-verification" content="b3_vUZ44IyMvtea-jViWJMcSVi4senjz_Q76qfPbySM" />
       </Head>
 
