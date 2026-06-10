@@ -10,7 +10,7 @@ export default function Contact() {
   const message = encodeURIComponent("Hey sir, I want admission in Sarvoch Coaching Centre");
   
   // Telegram Bot link (Note: Telegram bots primarily open direct chat)
-  const telegramUrl = `https://t.me/${botUsername}`;
+  const telegramUrl = `https://t.me/${botUsername}?text=${message}`;
 
   return (
     <>
