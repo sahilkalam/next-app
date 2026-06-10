@@ -12,6 +12,10 @@ export default function Contact() {
     <>
       <Head>
         <title>Sarvoch Coaching Centre | Contact Us</title>
+    <meta
+    name="description"
+    content="Contact Sarvoch Coaching Centre for admissions, course information and student support."
+  />
       </Head>
 
       <div className="min-h-screen bg-gray-50 text-gray-800 p-4 sm:p-8 flex flex-col justify-between">
